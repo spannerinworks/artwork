@@ -1,1 +1,6 @@
-puts 'hello world'
+def doit
+  puts 'hello world'
+end
+
+doit
+

@@ -9,6 +9,7 @@
 */
 
 ruby*:::method-entry
+/copyinstr(arg2) == "hello_world.rb"/
 {
-  printf("%s#%s\n", copyinstr(arg0), copyinstr(arg1));
+  printf("%s: %s#%s\n", copyinstr(arg2), copyinstr(arg0), copyinstr(arg1));
 }
