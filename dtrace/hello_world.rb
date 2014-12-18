@@ -1,6 +1,12 @@
-def doit
-  puts 'hello world'
+class Thing
+  def doit
+    puts 'hello world'
+  end
 end
 
-doit
+a = Thing.new
+b = Thing.new
+a.doit
+b.doit
+a.doit
 
