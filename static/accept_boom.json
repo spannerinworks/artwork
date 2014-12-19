@@ -1,4 +1,3 @@
-// COMPLEXITY START
 {
 "nodes": [
 {"name": "OrderManagementService(70205382243080)", "group": 1},
@@ -4031,4 +4030,3 @@ SyntaxError: unexpected tINTEGER, expecting end-of-input
 {"source":543, "target":939, "value": 1}
 ]
 }
-// COMPLEXITY END
