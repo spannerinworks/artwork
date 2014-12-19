@@ -10,8 +10,9 @@ class Complexity
     trace = setup_trace
     trace.enable
 
-    yield
+    return yield
 
+  ensure
     trace.disable
     print_data
   end
