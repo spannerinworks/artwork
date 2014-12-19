@@ -23,10 +23,10 @@ class Complexity
       case tp.event
         when :call
           if @object_map.has_key? tp.self.object_id
-            target = @object_map[tp.self.object_id]
+            target = @object_map[tp.self.object_id].first
           else
             target = @object_map.size
-            @object_map[tp.self.object_id] = target
+            @object_map[tp.self.object_id] = [target, tp.self.class]
           end
 
           source = @stack.last
@@ -39,12 +39,16 @@ class Complexity
   end
 
   def print_data
+    classes = {}
+
     puts '// COMPLEXITY START'
     puts '{'
 
     puts '"nodes": ['
-    @object_map.each do |k, v|
-      puts "{\"name\": \"#{k}\", \"group\": 1},"
+    @object_map.each do |obj_id, target_and_class|
+      clazz = target_and_class[1]
+      classes[clazz] ||= classes.size + 1
+      puts "{\"name\": \"#{clazz}(#{obj_id})\", \"group\": #{classes[clazz]}},"
     end
     puts ']'
 
